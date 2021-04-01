@@ -1,0 +1,25 @@
+* {
+  font-family: "RobotoMono", monospace;
+  font-weight: 600;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.app {
+  width: 70vw;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.12);
+  padding: 30px;
+}
+.app h1 {
+  text-align: left;
+}
+
+/*# sourceMappingURL=index.css.map */

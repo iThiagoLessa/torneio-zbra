@@ -1,0 +1,18 @@
+.content table {
+  width: 100%;
+  height: 200px;
+  padding: 0;
+}
+.content table thead {
+  background-color: #71c155;
+  color: white;
+}
+.content table tbody {
+  background-color: gray;
+}
+.content table tbody td {
+  padding: 0;
+  background-color: #e6e6e6;
+}
+
+/*# sourceMappingURL=participantes.css.map */
