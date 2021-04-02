@@ -1,12 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "../assets/css/participantes.css";
 
-class Participantes extends Component {
-  constructor() {
-    super();
-  }
-  render() {
+const Participantes = props => {
     return (
       <div className="content">
         <h1>Participantes</h1>
@@ -34,7 +30,6 @@ class Participantes extends Component {
         <Link to="/chave">Chaves</Link>
       </div>
     );
-  }
 }
 
 export default Participantes;
