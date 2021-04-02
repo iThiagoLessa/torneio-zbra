@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Participantes from "./Participantes";
 import Chave from "./Chave";
-import Editar from "../components/Editar";
+import Editar from "./Editar";
 import NotFound from "./NotFound";
 import "../assets/css/index.css";
 

@@ -14,5 +14,21 @@
   padding: 0;
   background-color: #e6e6e6;
 }
+.content .add {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 5px;
+}
+.content .add button {
+  cursor: pointer;
+  color: white;
+  background-color: #71c155;
+  border: 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+.content .add button:hover {
+  background-color: #55a739;
+}
 
 /*# sourceMappingURL=participantes.css.map */
