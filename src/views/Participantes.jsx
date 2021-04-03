@@ -21,7 +21,7 @@ const Participantes = (props) => {
       <div className="add">
         <button onClick={e => openModal(e)}>Adicionar participantes</button>
       </div>
-      <Tabela />
+      <Tabela participantes={props.participantes} />
       <AdicionarParticipantes closeModal={e => closeModal} participantes={props.participantes} setParticipante={props.setParticipante} setReload={props.setReload} reload={props.reload} />
       <Link to="/chave">Chaves</Link>
     </div>

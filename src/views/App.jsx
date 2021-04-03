@@ -17,21 +17,18 @@ class App extends Component {
     }
   }
   componentDidMount() {
-    if(this.state.reload === 1) {
-      this.setState({
-        reload: 0
-      });
-    }
+    console.log('carregado');
   }
   setReload(valor){
     this.setState({reload: valor})
   }
-  setParticipante(participantes) {
-    const novoParticipante = [...this.state.participantes, participantes];
+  setParticipante(participante) {
+    const novoParticipante = [...this.state.participantes, participante];
     const novoArray = {
       participantes: novoParticipante
     }
     this.setState(novoArray);
+    console.log(this.state.participantes)
   }
   render() {
     return (

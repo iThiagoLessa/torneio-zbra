@@ -13,34 +13,19 @@ const Tabela = (props) => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Thiago</td>
-          <td>(21)96575-0502</td>
-          <td>ithiagolessa@gmail.com</td>
-          <td><button>Editar</button></td>
-          <td><button>Excluir</button></td>
-        </tr>
-        <tr>
-          <td>Danyel</td>
-          <td>(21)96575-0502</td>
-          <td>ithiagolessa@gmail.com</td>
-          <td><button>Editar</button></td>
-          <td><button>Excluir</button></td>
-        </tr>
-        <tr>
-          <td>Paulinho</td>
-          <td>(21)96575-0502</td>
-          <td>ithiagolessa@gmail.com</td>
-          <td><button>Editar</button></td>
-          <td><button>Excluir</button></td>
-        </tr>
-        <tr>
-          <td>Marcos</td>
-          <td>(21)96575-0502</td>
-          <td>ithiagolessa@gmail.com</td>
-          <td><button>Editar</button></td>
-          <td><button>Excluir</button></td>
-        </tr>
+        {
+          props.participantes.map((participante, index) => {
+            return(
+              <tr key={index}>
+                <td>{participante.nome}</td>
+                <td>{participante.email}</td>
+                <td>{participante.telefone}</td>
+                <td><button>Editar</button></td>
+                <td><button>Excluir</button></td>
+              </tr>
+            )
+          })
+        }
       </tbody>
     </table>
   );

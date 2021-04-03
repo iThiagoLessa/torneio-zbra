@@ -2,7 +2,10 @@ import React from "react";
 import "../assets/css/adicionarParticipantes.css";
 
 const AdicionarParticipantes = (props) => {
-  console.log(props);
+  //console.log(props.participantes);
+  const setLocalStorage = (valor, callback) => {
+    //localStorage.setItem('participantes', JSON.stringify(valor));
+  }
   const cadastraPessoa = (e) => {
     e.preventDefault();
     const form = document.forms.cadastro;
@@ -13,10 +16,12 @@ const AdicionarParticipantes = (props) => {
       telefone: telefone.value,
     };
     props.setParticipante(participante);
+    form.reset();
   };
   const close = props.closeModal();
   const fechar = (e) => {
     e.preventDefault();
+    console.log(props.participantes); 
     close();
   }
   return (
