@@ -1,64 +1,69 @@
 $primary-back-color: #71c155;
-.formulario {
+#modal {
+    display: none;
+    opacity: 0;
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     background-color: #00000066;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    div {
-        background-color: white;
-        width: 60%;
-        border-radius: 5px;
-        header {
-            padding: 20px;
-            border-bottom: 1px solid rgb(235, 235, 235);
-            display: flex;
-            justify-content: space-between;
-        }
-        form {
-            padding: 20px;
-            input {
-                width: 100%;
-                padding: 12px 20px;
-                margin: 8px 0;
-                display: inline-block;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-                box-sizing: border-box;
-                &:focus {
-                    outline: 1px solid #4fdb21;
-                }
-            }
-            div {
+    .formulario {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        div {
+            background-color: white;
+            width: 60%;
+            border-radius: 5px;
+            header {
+                padding: 20px;
+                border-bottom: 1px solid rgb(235, 235, 235);
                 display: flex;
-                flex-direction: column;
-                width: 100%;
-                margin-bottom: 10px;
-                label {
-                    text-align: left;
-                }
+                justify-content: space-between;
             }
-            footer {
-                display: flex;
-                justify-content: flex-end;
-                button {
-                    margin-left: 10px;
-                    cursor: pointer;
-                    background-color: $primary-back-color;
-                    color: white;
-                    border: 0;
-                    padding: 10px;
-                    border-radius: 5px;
-                    &:hover {
-                        background-color: #55a739;
-                    }
+            form {
+                padding: 20px;
+                input {
+                    width: 100%;
+                    padding: 12px 20px;
+                    margin: 8px 0;
+                    display: inline-block;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    box-sizing: border-box;
                     &:focus {
-                        outline: none;
-                        outline-width: 0;
+                        outline: 1px solid #4fdb21;
+                    }
+                }
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    margin-bottom: 10px;
+                    label {
+                        text-align: left;
+                    }
+                }
+                footer {
+                    display: flex;
+                    justify-content: flex-end;
+                    button {
+                        margin-left: 10px;
+                        cursor: pointer;
+                        background-color: $primary-back-color;
+                        color: white;
+                        border: 0;
+                        padding: 10px;
+                        border-radius: 5px;
+                        &:hover {
+                            background-color: #55a739;
+                        }
+                        &:focus {
+                            outline: none;
+                            outline-width: 0;
+                        }
                     }
                 }
             }
