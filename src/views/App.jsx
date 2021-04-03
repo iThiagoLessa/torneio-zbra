@@ -16,11 +16,10 @@ class App extends Component {
       participantes: []
     }
   }
-  componentDidMount() {
-    console.log('carregado');
-  }
-  setReload(valor){
-    this.setState({reload: valor})
+  setReload(reload){
+    this.setState({reload});
+    console.log(localStorage.getItem("participantes"));
+    console.log(this.state.participantes);
   }
   setParticipante(participante) {
     const novoParticipante = [...this.state.participantes, participante];
@@ -28,7 +27,7 @@ class App extends Component {
       participantes: novoParticipante
     }
     this.setState(novoArray);
-    console.log(this.state.participantes)
+    //console.log(this.state.participantes)
   }
   render() {
     return (

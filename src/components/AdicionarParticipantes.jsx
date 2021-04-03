@@ -2,7 +2,7 @@ import React from "react";
 import "../assets/css/adicionarParticipantes.css";
 
 const AdicionarParticipantes = (props) => {
-  //console.log(props.participantes);
+  console.log(props);
   const setLocalStorage = (valor, callback) => {
     //localStorage.setItem('participantes', JSON.stringify(valor));
   }
@@ -17,6 +17,7 @@ const AdicionarParticipantes = (props) => {
     };
     props.setParticipante(participante);
     form.reset();
+    props.setReload(1);
   };
   const close = props.closeModal();
   const fechar = (e) => {
