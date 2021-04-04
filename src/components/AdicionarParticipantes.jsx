@@ -3,21 +3,24 @@ import "../assets/css/adicionarParticipantes.css";
 
 const AdicionarParticipantes = (props) => {
   console.log(props);
-  const setLocalStorage = (valor, callback) => {
-    //localStorage.setItem('participantes', JSON.stringify(valor));
-  }
+
   const cadastraPessoa = (e) => {
     e.preventDefault();
     const form = document.forms.cadastro;
     const { nome, email, telefone } = form;
     const participante = {
+      id: props.participantes.length + 1,
       nome: nome.value,
       email: email.value,
       telefone: telefone.value,
     };
+    //console.log(participante)
     props.setParticipante(participante);
+    const modal = document.getElementById("modal");
+    modal.style.display = "none";
+    modal.style.opacity = 0;
     form.reset();
-    props.setReload(1);
+    //props.setReload(1);
   };
   const close = props.closeModal();
   const fechar = (e) => {

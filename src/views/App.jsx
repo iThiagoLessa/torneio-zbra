@@ -9,25 +9,26 @@ import "../assets/css/index.css";
 class App extends Component {
   constructor() {
     super();
-    this.setReload = this.setReload.bind(this);
     this.setParticipante = this.setParticipante.bind(this);
     this.state = {
-      reload: 0,
       participantes: []
     }
   }
-  setReload(reload){
-    this.setState({reload});
-    console.log(localStorage.getItem("participantes"));
-    console.log(this.state.participantes);
+  componentDidMount() {
+    console.log(JSON.parse(localStorage.getItem("participantes")));
+    const participantesSalvos = JSON.parse(localStorage.getItem("participantes"));
+    if(this.state.participantes.length === 0 && participantesSalvos != null) {
+      this.setState(participantesSalvos);
+    }
   }
   setParticipante(participante) {
     const novoParticipante = [...this.state.participantes, participante];
     const novoArray = {
       participantes: novoParticipante
     }
+    //console.log(novoArray)
+    localStorage.setItem("participantes", JSON.stringify(novoArray));
     this.setState(novoArray);
-    //console.log(this.state.participantes)
   }
   render() {
     return (
