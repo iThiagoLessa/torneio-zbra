@@ -5,6 +5,7 @@ const Tabela = (props) => {
   function getPath(id) {
     return `editar/${id}`
   }
+  //console.log(props)
   function excluirItem(id) {
     const obj = [...props.participantes];
     const index = obj.findIndex((elm) => {
@@ -13,7 +14,7 @@ const Tabela = (props) => {
     //removendo do json
     obj.splice(obj.indexOf(index), 1);
     props.updateTable(obj)
-    console.log(obj);
+    //console.log(obj);
   }
   return (
     <table className="tabela">
@@ -27,7 +28,7 @@ const Tabela = (props) => {
         </tr>
       </thead>
       <tbody>
-        {
+      {
           props.participantes.map((participante, index) => {
             return(
               <tr key={index}>

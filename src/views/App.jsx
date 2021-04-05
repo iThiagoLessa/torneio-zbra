@@ -19,12 +19,9 @@ class App extends Component {
     // inserindo com o json que está salva no localStorage
     const participantesSalvos = JSON.parse(localStorage.getItem("participantes"));
     if(this.state.participantes.length === 0 && participantesSalvos != null) {
-      this.setState({
-        participantes: participantesSalvos
-      });
+      //console.log(participantesSalvos);
+      this.setState(participantesSalvos);
     }
-   // console.log(this.state.participantes)
-    console.log("did renderizado");
   }
   setParticipante(participante) {
     const novoParticipante = [...this.state.participantes, participante];
@@ -36,10 +33,11 @@ class App extends Component {
     this.setState(novoArray);
   }
   updateTable(valor) {
-    this.setState({
+    const novoArray = {
       participantes: valor
-    });
-    localStorage.setItem("participantes", JSON.stringify(valor));
+    }
+    this.setState(novoArray);
+    localStorage.setItem("participantes", JSON.stringify(novoArray));
   }
   render() {
     return (
