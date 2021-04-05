@@ -13,10 +13,15 @@
 }
 .content table tbody tr td button a {
   text-decoration: none;
-  color: black;
+  color: white;
 }
-.content table tbody td {
-  padding: 0;
+.content table tbody tr td button {
+  background-color: #71c155;
+  border: 0;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 .content .add {
   display: flex;

@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import "../assets/css/editar.css";
 const Editar = (props) => {
-  console.log(props)
+  //console.log(props)
   const { id } = useParams();
   useEffect(() => {
     const obj = [...props.participantes];
@@ -32,6 +32,8 @@ const Editar = (props) => {
     obj[index].email = email.value;
     obj[index].telefone = telefone.value;
     props.updateTable(obj);
+    const msg = document.getElementById("msg");
+    msg.style.opacity = 1;
   };
   return (
     <div>
@@ -76,6 +78,11 @@ const Editar = (props) => {
               <button>Editar</button>
             </footer>
           </form>
+          <div>
+            <span id="msg">
+              Jogador Atualizado com sucesso!
+            </span>
+          </div>
         </div>
       </div>
     </div>

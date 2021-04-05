@@ -66,5 +66,13 @@ $primary-back-color: #71c155;
                 }
             }
         }
+        div {
+            text-align: right;
+            color: $primary-back-color;
+            span {
+                opacity: 0;
+                transition: .5s;
+            }
+        }
     }
 }

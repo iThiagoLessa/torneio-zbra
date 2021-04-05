@@ -67,5 +67,13 @@
   outline: none;
   outline-width: 0;
 }
+.formulario div div {
+  text-align: right;
+  color: #71c155;
+}
+.formulario div div span {
+  opacity: 0;
+  transition: 0.5s;
+}
 
 /*# sourceMappingURL=editar.css.map */

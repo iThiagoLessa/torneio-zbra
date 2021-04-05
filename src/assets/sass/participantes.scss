@@ -15,11 +15,18 @@ $primary-back-color: #71c155;
             }
             tr td button a {
                 text-decoration: none;
-                color: black;
+                color: white;
             }
-        }
-        tbody td {
-            padding         : 0;
+            tr td {
+                button {
+                    background-color: $primary-back-color;
+                    border: 0;
+                    color: white; 
+                    padding: 10px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+            }
         }
     }
     .add {
