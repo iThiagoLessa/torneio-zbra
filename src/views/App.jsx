@@ -15,7 +15,7 @@ class App extends Component {
     }
   }
   componentDidMount() {
-    console.log(JSON.parse(localStorage.getItem("participantes")));
+    // inserindo com o json que está salva no localStorage
     const participantesSalvos = JSON.parse(localStorage.getItem("participantes"));
     if(this.state.participantes.length === 0 && participantesSalvos != null) {
       this.setState(participantesSalvos);
@@ -36,13 +36,13 @@ class App extends Component {
         <Router>
             <Switch>
                 <Route exact path="/">
-                    <Participantes setParticipante={this.setParticipante} participantes={this.state.participantes} setReload={this.setReload} reload={this.state.reload} />
+                    <Participantes setParticipante={this.setParticipante} participantes={this.state.participantes} />
                 </Route>
                 <Route path="/chave">
                     <Chave />
                 </Route>
                 <Route path="/editar/:id">
-                    <Editar />
+                    <Editar setParticipante={this.setParticipante} participantes={this.state.participantes} />
                 </Route>
                 <Route exact path="*">
                     <NotFound />

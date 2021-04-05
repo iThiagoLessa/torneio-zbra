@@ -13,6 +13,10 @@ $primary-back-color: #71c155;
             tr:nth-child(odd) {
                 background-color: #f2f2f2;
             }
+            tr td button a {
+                text-decoration: none;
+                color: black;
+            }
         }
         tbody td {
             padding         : 0;

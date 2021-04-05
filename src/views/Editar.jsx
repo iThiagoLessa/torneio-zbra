@@ -2,12 +2,18 @@ import React from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import "../assets/css/editar.css";
-const Editar = () => {
+const Editar = (props) => {
   const { id } = useParams();
+  const index = props.participantes.findIndex((elm) => {
+    return elm.id === parseInt(id);
+  });
+  const form = document.forms.cadastro;
+  const { nome, email, telefone } = form;
+
+    
+  
   const cadastraPessoa = (e) => {
     e.preventDefault();
-    const form = document.forms.cadastro;
-    console.log(form);
   };
   return (
     <div>
@@ -17,14 +23,15 @@ const Editar = () => {
             <span>Editar Participante</span>
             <span><Link to="/">Voltar</Link></span>
           </header>
-          <form name="cadastro" onSubmit={(e) => cadastraPessoa(e)}>
+          <form name="cadastrar" onSubmit={(e) => cadastraPessoa(e)}>
             <div>
               <label>Nome:</label>
-              <input type="text" name="nome" placeholder="insira seu nome" />
+              <input type="text" id="nome" name="nome" placeholder="insira seu nome" />
             </div>
             <div>
               <label>Email:</label>
               <input
+                id="email"
                 type="Email"
                 name="email"
                 placeholder="insira seu email válido"
@@ -33,6 +40,7 @@ const Editar = () => {
             <div>
               <label>Telefone:</label>
               <input
+                id="telefone"
                 type="number"
                 name="telefone"
                 placeholder="insira seu telefone"

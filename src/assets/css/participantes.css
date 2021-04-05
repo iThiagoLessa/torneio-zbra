@@ -11,6 +11,10 @@
 .content table tbody tr:nth-child(odd) {
   background-color: #f2f2f2;
 }
+.content table tbody tr td button a {
+  text-decoration: none;
+  color: black;
+}
 .content table tbody td {
   padding: 0;
 }

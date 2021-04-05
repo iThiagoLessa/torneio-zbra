@@ -2,7 +2,7 @@ import React from "react";
 import "../assets/css/adicionarParticipantes.css";
 
 const AdicionarParticipantes = (props) => {
-  console.log(props);
+  //console.log(props);
 
   const cadastraPessoa = (e) => {
     e.preventDefault();
@@ -20,12 +20,11 @@ const AdicionarParticipantes = (props) => {
     modal.style.display = "none";
     modal.style.opacity = 0;
     form.reset();
-    //props.setReload(1);
   };
   const close = props.closeModal();
   const fechar = (e) => {
     e.preventDefault();
-    console.log(props.participantes); 
+    //console.log(props.participantes); 
     close();
   }
   return (
