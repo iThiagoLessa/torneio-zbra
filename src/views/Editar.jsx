@@ -3,17 +3,34 @@ import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import "../assets/css/editar.css";
 const Editar = (props) => {
+  console.log(props)
   const { id } = useParams();
   const index = props.participantes.findIndex((elm) => {
     return elm.id === parseInt(id);
   });
-  const form = document.forms.cadastro;
-  const { nome, email, telefone } = form;
+  if (props.participantes.length > 0) {
+    //atribuindo valor aos campos do editar
+    const form = document.forms.cadastrar;
+    const { nome, email, telefone } = form;
+    const obj = [...props.participantes];
+    nome.value = obj[index].nome;
+    email.value = obj[index].email;
+    telefone.value = obj[index].telefone;
+  }
 
-    
-  
   const cadastraPessoa = (e) => {
     e.preventDefault();
+    if (props.participantes.length > 0) {
+      const obj = [...props.participantes];
+      //console.log(obj)
+      const form = document.forms.cadastrar;
+      const { nome, email, telefone } = form;
+      obj[index].nome = nome.value;
+      obj[index].email = email.value;
+      obj[index].telefone = telefone.value;
+      //console.log(obj);
+      props.setParticipante(obj);
+    }
   };
   return (
     <div>
@@ -21,12 +38,18 @@ const Editar = (props) => {
         <div>
           <header>
             <span>Editar Participante</span>
-            <span><Link to="/">Voltar</Link></span>
+            <span>
+              <Link to="/">Voltar</Link>
+            </span>
           </header>
-          <form name="cadastrar" onSubmit={(e) => cadastraPessoa(e)}>
+          <form
+            id="editar"
+            name="cadastrar"
+            onSubmit={(e) => cadastraPessoa(e)}
+          >
             <div>
               <label>Nome:</label>
-              <input type="text" id="nome" name="nome" placeholder="insira seu nome" />
+              <input type="text" name="nome" placeholder="insira seu nome" />
             </div>
             <div>
               <label>Email:</label>
@@ -47,7 +70,9 @@ const Editar = (props) => {
               />
             </div>
             <footer>
-              <button><Link to="/">Voltar</Link></button>
+              <button>
+                <Link to="/">Voltar</Link>
+              </button>
               <button>Editar</button>
             </footer>
           </form>

@@ -10,6 +10,7 @@ class App extends Component {
   constructor() {
     super();
     this.setParticipante = this.setParticipante.bind(this);
+    this.updateTable = this.updateTable.bind(this)
     this.state = {
       participantes: []
     }
@@ -18,8 +19,12 @@ class App extends Component {
     // inserindo com o json que está salva no localStorage
     const participantesSalvos = JSON.parse(localStorage.getItem("participantes"));
     if(this.state.participantes.length === 0 && participantesSalvos != null) {
-      this.setState(participantesSalvos);
+      this.setState({
+        participantes: participantesSalvos
+      });
     }
+    console.log(this.state.participantes)
+    console.log("did renderizado");
   }
   setParticipante(participante) {
     const novoParticipante = [...this.state.participantes, participante];
@@ -30,13 +35,19 @@ class App extends Component {
     localStorage.setItem("participantes", JSON.stringify(novoArray));
     this.setState(novoArray);
   }
+  updateTable(valor) {
+    this.setState({
+      participantes: valor
+    });
+    localStorage.setItem("participantes", JSON.stringify(valor));
+  }
   render() {
     return (
       <div className="app">
         <Router>
             <Switch>
                 <Route exact path="/">
-                    <Participantes setParticipante={this.setParticipante} participantes={this.state.participantes} />
+                    <Participantes updateTable={this.updateTable} setParticipante={this.setParticipante} participantes={this.state.participantes} />
                 </Route>
                 <Route path="/chave">
                     <Chave />

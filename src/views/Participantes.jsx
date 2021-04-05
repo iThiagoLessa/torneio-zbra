@@ -4,6 +4,7 @@ import "../assets/css/participantes.css";
 import Tabela from "../components/Tabela";
 import AdicionarParticipantes from "../components/AdicionarParticipantes";
 
+
 const Participantes = (props) => {
   const openModal = (e) => {
     const modal = document.getElementById("modal");
@@ -21,8 +22,8 @@ const Participantes = (props) => {
       <div className="add">
         <button onClick={e => openModal(e)}>Adicionar participantes</button>
       </div>
-      <Tabela participantes={props.participantes} />
-      <AdicionarParticipantes closeModal={e => closeModal} participantes={props.participantes} setParticipante={props.setParticipante} setReload={props.setReload} reload={props.reload} />
+      <Tabela updateTable={props.updateTable} participantes={props.participantes} setParticipante={props.setParticipante} />
+      <AdicionarParticipantes closeModal={e => closeModal} participantes={props.participantes} setParticipante={props.setParticipante} />
       <Link to="/chave">Chaves</Link>
     </div>
   );

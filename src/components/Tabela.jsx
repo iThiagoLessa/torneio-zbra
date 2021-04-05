@@ -5,6 +5,16 @@ const Tabela = (props) => {
   function getPath(id) {
     return `editar/${id}`
   }
+  function excluirItem(id) {
+    const obj = [...props.participantes]
+    const index = obj.findIndex((elm) => {
+      return elm.id === id;
+    });
+    //removendo do json
+    obj.splice(obj.indexOf(index), 1);
+    props.updateTable(obj)
+    console.log(obj);
+  }
   return (
     <table className="tabela">
       <thead>
@@ -25,7 +35,7 @@ const Tabela = (props) => {
                 <td>{participante.email}</td>
                 <td>{participante.telefone}</td>
                 <td><button><Link to={getPath(participante.id)} >Editar</Link></button></td>
-                <td><button>Excluir</button></td>
+                <td><button onClick={e => excluirItem(participante.id)}>Excluir</button></td>
               </tr>
             )
           })
