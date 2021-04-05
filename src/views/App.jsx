@@ -23,7 +23,7 @@ class App extends Component {
         participantes: participantesSalvos
       });
     }
-    console.log(this.state.participantes)
+   // console.log(this.state.participantes)
     console.log("did renderizado");
   }
   setParticipante(participante) {
@@ -53,7 +53,7 @@ class App extends Component {
                     <Chave />
                 </Route>
                 <Route path="/editar/:id">
-                    <Editar setParticipante={this.setParticipante} participantes={this.state.participantes} />
+                    <Editar updateTable={this.updateTable} setParticipante={this.setParticipante} participantes={this.state.participantes} />
                 </Route>
                 <Route exact path="*">
                     <NotFound />

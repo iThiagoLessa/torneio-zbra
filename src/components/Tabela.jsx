@@ -6,7 +6,7 @@ const Tabela = (props) => {
     return `editar/${id}`
   }
   function excluirItem(id) {
-    const obj = [...props.participantes]
+    const obj = [...props.participantes];
     const index = obj.findIndex((elm) => {
       return elm.id === id;
     });

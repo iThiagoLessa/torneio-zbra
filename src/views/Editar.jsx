@@ -1,36 +1,37 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import "../assets/css/editar.css";
 const Editar = (props) => {
   console.log(props)
   const { id } = useParams();
-  const index = props.participantes.findIndex((elm) => {
-    return elm.id === parseInt(id);
-  });
-  if (props.participantes.length > 0) {
-    //atribuindo valor aos campos do editar
-    const form = document.forms.cadastrar;
-    const { nome, email, telefone } = form;
+  useEffect(() => {
     const obj = [...props.participantes];
-    nome.value = obj[index].nome;
-    email.value = obj[index].email;
-    telefone.value = obj[index].telefone;
-  }
+    const index = obj.findIndex((elm) => {
+      return elm.id === parseInt(id);
+    });
+    if(obj.length > 0) {
+     //console.log(obj);
+      const form = document.forms.cadastro;
+      const { nome, email, telefone } = form;
+      nome.value = obj[index].nome;
+      email.value = obj[index].email;
+      telefone.value = obj[index].telefone;
+    }
+  }, [props, id]);
 
   const cadastraPessoa = (e) => {
     e.preventDefault();
-    if (props.participantes.length > 0) {
-      const obj = [...props.participantes];
-      //console.log(obj)
-      const form = document.forms.cadastrar;
-      const { nome, email, telefone } = form;
-      obj[index].nome = nome.value;
-      obj[index].email = email.value;
-      obj[index].telefone = telefone.value;
-      //console.log(obj);
-      props.setParticipante(obj);
-    }
+    const obj = [...props.participantes];
+    const index = obj.findIndex((elm) => {
+      return elm.id === parseInt(id);
+    });
+    const form = document.forms.cadastro;
+    const { nome, email, telefone } = form;
+    obj[index].nome = nome.value;
+    obj[index].email = email.value;
+    obj[index].telefone = telefone.value;
+    props.updateTable(obj);
   };
   return (
     <div>
@@ -43,8 +44,7 @@ const Editar = (props) => {
             </span>
           </header>
           <form
-            id="editar"
-            name="cadastrar"
+            name="cadastro"
             onSubmit={(e) => cadastraPessoa(e)}
           >
             <div>
