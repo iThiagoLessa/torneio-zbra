@@ -63,12 +63,12 @@ const Editar = (props) => {
               />
             </div>
             <div>
-              <label>Telefone:</label>
+              <label>Celular:</label>
               <input
                 id="telefone"
                 type="number"
                 name="telefone"
-                placeholder="insira seu telefone"
+                placeholder="(xx)xxxx-xxxx"
               />
             </div>
             <footer>

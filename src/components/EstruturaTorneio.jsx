@@ -15,7 +15,9 @@ const EstruturaTorneio = (props) => {
     });
     if(obj.length === 3 ) {
       const finalista2 = document.getElementById("finalista2");
+      const jogador4 = document.getElementById("jogador4");
       finalista2.innerHTML = obj[2].nome;
+      jogador4.innerHTML = "eliminado";
     }
   });
   return (
