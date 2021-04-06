@@ -16,13 +16,18 @@ const Tabela = (props) => {
     props.updateTable(obj)
     //console.log(obj);
   }
+  const mask = (value, pattern) => {
+    let i = 0;
+    const v = value.toString();
+    return pattern.replace(/#/g, () => v[i++] || '');
+  }
   return (
     <table className="tabela">
       <thead>
         <tr>
           <th>Nome</th>
           <th>Email</th>
-          <th>Telefone</th>
+          <th>Celular</th>
           <th>Editar</th>
           <th>Excluir</th>
         </tr>
@@ -34,7 +39,7 @@ const Tabela = (props) => {
               <tr key={index}>
                 <td>{participante.nome}</td>
                 <td>{participante.email}</td>
-                <td>{participante.telefone}</td>
+                <td>{mask(participante.telefone, '(##)#####-####')}</td>
                 <td><button><Link to={getPath(participante.id)} >Editar</Link></button></td>
                 <td><button onClick={e => excluirItem(participante.id)}>Excluir</button></td>
               </tr>

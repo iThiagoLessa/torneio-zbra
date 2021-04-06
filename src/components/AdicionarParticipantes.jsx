@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../assets/css/adicionarParticipantes.css";
 
 const AdicionarParticipantes = (props) => {
@@ -56,12 +56,12 @@ const AdicionarParticipantes = (props) => {
               />
             </div>
             <div>
-              <label>Telefone:</label>
+              <label>Celular:</label>
               <input
                 type="number"
                 required
                 name="telefone"
-                placeholder="insira seu telefone"
+                placeholder="(xx)xxxx-xxxx"
               />
             </div>
             <footer>
