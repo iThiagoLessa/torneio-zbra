@@ -47,8 +47,8 @@ class App extends Component {
                 <Route exact path="/">
                     <Participantes updateTable={this.updateTable} setParticipante={this.setParticipante} participantes={this.state.participantes} />
                 </Route>
-                <Route path="/chave">
-                    <Chave />
+                <Route exact path="/chave">
+                    <Chave participantes={this.state.participantes} />
                 </Route>
                 <Route path="/editar/:id">
                     <Editar updateTable={this.updateTable} setParticipante={this.setParticipante} participantes={this.state.participantes} />
