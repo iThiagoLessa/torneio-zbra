@@ -52,7 +52,7 @@
   grid-row: 1/2;
   grid-column: 2/2;
   display: grid;
-  grid-template-rows: 50% 50%;
+  grid-template-rows: 52% 48%;
 }
 .torneio .conteudo .bloco3 div:nth-child(1) {
   display: flex;
@@ -67,7 +67,7 @@
   grid-row: 2/2;
   grid-column: 2/2;
   display: grid;
-  grid-template-rows: 60% 40%;
+  grid-template-rows: 70% 40%;
 }
 .torneio .conteudo .bloco4 div:nth-child(1) {
   border-right: 2px solid black;
@@ -82,7 +82,7 @@
 }
 .torneio .conteudo .bloco5 div:nth-child(1) {
   display: grid;
-  grid-template-rows: 50% 50%;
+  grid-template-rows: 55% 45%;
 }
 .torneio .conteudo .bloco5 div:nth-child(1) div:nth-child(1) {
   border-bottom: 2px solid black;
@@ -94,6 +94,18 @@
 }
 .torneio .conteudo .bloco5 div:nth-child(2) img {
   width: 50%;
+}
+
+@media only screen and (max-width: 900px) {
+  .conteudo {
+    padding-bottom: 20px;
+    overflow-x: scroll;
+    grid-template-columns: 31% 40% !important;
+    grid-template-rows: 50% !important;
+  }
+  .conteudo .bloco5 div:nth-child(2) img {
+    width: 100% !important;
+  }
 }
 
 /*# sourceMappingURL=chave.css.map */
