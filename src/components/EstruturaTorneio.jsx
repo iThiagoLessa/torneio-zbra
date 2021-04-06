@@ -3,7 +3,13 @@ import imgTrofeu from "../assets/img/trofeu.png";
 const EstruturaTorneio = (props) => {
   useEffect(() => {
     const obj = [...props.participantes];
+    /* comentei o filter porque estava dando um warning no console
     obj.filter((participante, index) => {
+      const jogador = document.getElementById(`jogador${index+1}`);
+      jogador.innerHTML = participante.nome;
+    });
+    */
+    obj.forEach((participante, index) => {
       const jogador = document.getElementById(`jogador${index+1}`);
       jogador.innerHTML = participante.nome;
     });
