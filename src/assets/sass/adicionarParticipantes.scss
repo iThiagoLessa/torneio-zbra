@@ -17,6 +17,18 @@ $primary-back-color: #71c155;
             background-color: white;
             width: 60%;
             border-radius: 5px;
+            #msgError {
+                display: flex;
+                width: 100%;
+                justify-content: flex-end;
+                display: none;
+                padding-bottom: 15px;
+                span {
+                    color: #71c155;
+                    opacity: 1;
+                    margin-right: 20px;
+                }
+            }
             header {
                 padding: 20px;
                 border-bottom: 1px solid rgb(235, 235, 235);

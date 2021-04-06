@@ -10,6 +10,8 @@ const Participantes = (props) => {
     const modal = document.getElementById("modal");
     modal.style.display = "block";
     modal.style.opacity = 1;
+    let msg = document.getElementById("msgError");
+    msg.style.display = "none";
   }
   const closeModal = () => {
     const modal = document.getElementById("modal");
